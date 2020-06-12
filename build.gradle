@@ -1,0 +1,39 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+}
+
+plugins {
+    id 'java'
+    id 'checkstyle'
+    id 'pl.allegro.tech.build.axion-release' version '1.12.0'
+    id 'application'
+}
+
+group 'com.octetful'
+version scmVersion.version
+
+sourceCompatibility = JavaVersion.VERSION_12
+
+repositories {
+    mavenCentral()
+}
+
+test {
+    useJUnitPlatform()
+}
+
+application {
+    mainClass = 'com.octetful.Main'
+}
+
+dependencies {
+    compileOnly 'org.projectlombok:lombok:1.18.+'
+    annotationProcessor 'org.projectlombok:lombok:1.18.+'
+    compile 'io.vavr:vavr:0.10.+'
+    testCompile 'org.mockito:mockito-core:1.10.+'
+    testCompile 'org.junit.jupiter:junit-jupiter:5.6.+'
+    testCompile 'org.junit.platform:junit-platform-launcher:1.6.+'
+    testCompile 'org.assertj:assertj-core:3.11.+'
+}

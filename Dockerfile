@@ -1,7 +1,7 @@
 FROM adoptopenjdk/openjdk14
 
-COPY build/distributions/java-starter-0.1.0-SNAPSHOT.tar /app/java-starter-0.1.0-SNAPSHOT.tar
+COPY build/distributions/kafka-playground-0.1.0-SNAPSHOT.tar /app/kafka-playground-0.1.0-SNAPSHOT.tar
 
-RUN cd /app && tar -xvf java-starter-0.1.0-SNAPSHOT.tar && chmod a+x /app/java-starter-0.1.0-SNAPSHOT/bin/java-starter
+RUN cd /app && tar -xvf kafka-playground-0.1.0-SNAPSHOT.tar && chmod a+x /app/kafka-playground-0.1.0-SNAPSHOT/bin/kafka-playground
 
-CMD ["/app/java-starter-0.1.0-SNAPSHOT/bin/java-starter"]
+CMD ["/app/kafka-playground-0.1.0-SNAPSHOT/bin/kafka-playground"]
